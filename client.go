@@ -28,7 +28,7 @@ import (
 )
 
 // Version is the SDK version, sent in the User-Agent header.
-const Version = "0.1.0"
+const Version = "1.3.0"
 
 // DefaultBaseURL is the hosted usend API.
 const DefaultBaseURL = "https://api.usend.et"
@@ -64,6 +64,8 @@ type Client struct {
 	Automations  *AutomationsService
 	Inboxes      *InboxesService
 	Stats        *StatsService
+	ShortLinks   *ShortLinksService
+	Logs         *LogsService
 }
 
 // Option configures a Client.
@@ -146,6 +148,8 @@ func New(apiKey string, opts ...Option) (*Client, error) {
 	c.Automations = &AutomationsService{c}
 	c.Inboxes = &InboxesService{c}
 	c.Stats = &StatsService{c}
+	c.ShortLinks = &ShortLinksService{c}
+	c.Logs = &LogsService{c}
 	return c, nil
 }
 

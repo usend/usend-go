@@ -44,6 +44,7 @@ type Domain struct {
 	OpenTracking     bool           `json:"open_tracking"`
 	ClickTracking    bool           `json:"click_tracking"`
 	ReceivingEnabled bool           `json:"receiving_enabled"`
+	ReceivingMode    string         `json:"receiving_mode,omitempty"` // "all" (catch-all) or "inboxes"
 	CustomReturnPath string         `json:"custom_return_path"`
 	DNSProvider      string         `json:"dns_provider,omitempty"`
 	Records          []DomainRecord `json:"records"`
@@ -62,6 +63,7 @@ type UpdateDomainParams struct {
 	OpenTracking     *bool   `json:"open_tracking,omitempty"`
 	ClickTracking    *bool   `json:"click_tracking,omitempty"`
 	ReceivingEnabled *bool   `json:"receiving_enabled,omitempty"`
+	ReceivingMode    *string `json:"receiving_mode,omitempty"` // "all" or "inboxes"
 	CustomReturnPath *string `json:"custom_return_path,omitempty"`
 	TLS              *string `json:"tls,omitempty"`
 }

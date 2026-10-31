@@ -172,7 +172,7 @@ type DomainClaim struct {
 	Region   string `json:"region"`
 	Record   struct {
 		Type  string `json:"type"`
-		Name  string `json:"name"` // _usend-claim.<name>
+		Name  string `json:"name"` // the domain itself (@)
 		Value string `json:"value"`
 		TTL   any    `json:"ttl"`
 	} `json:"record"`
